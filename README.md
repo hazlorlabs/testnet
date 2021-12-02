@@ -6,11 +6,8 @@ Planned Start Time: 1/15/2022, 16:00 PST;
 **This testnet will not be incentivized.**
 
 
-## Setup
 
-You will need [Starport](https://github.com/tendermint/starport) installed. 
-
-### Install and build latest Starport:
+### Install and build latest Binary:
 
 **Prerequisites:** If you want to install Starport locally, make sure to have [Golang >=1.16](https://golang.org/). The latest version of Starport also requires [Protocol Buffer compiler](https://grpc.io/docs/protoc-installation/) to be installed. [Node.js >=12.19.0](https://nodejs.org/) is used to build the welcome screen, block explorer and to run the web scaffold.
 
@@ -29,13 +26,6 @@ export GO111MODULE=on
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 ```
 
-```sh
-git clone https://github.com/tendermint/starport
-cd starport && git checkout develop
-make
-```
-
-This will build and install `starport` binary into `$GOBIN`.
 
 Note: When building from source, it is important to have your `$GOPATH` set correctly. When in doubt, the following should do:
 
@@ -44,7 +34,7 @@ mkdir ~/go
 export GOPATH=~/go
 ```
 
-##### Building Alien 👽
+##### Building Hazlor
 
 Be sure to use the latest version.
 
