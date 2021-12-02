@@ -1,3 +1,0 @@
-# testnet
-
-Add to Repo
