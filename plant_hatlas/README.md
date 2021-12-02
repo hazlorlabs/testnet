@@ -1,7 +1,7 @@
-# Alien - UFO Testnet 
+# Hazlor - Planet Hatlas Testnet 
 
 
-Planned Start Time: 11/11/2021, 16:00 UTC;
+Planned Start Time: 1/15/2022, 16:00 PST;
 
 **This testnet will not be incentivized.**
 
@@ -49,15 +49,17 @@ export GOPATH=~/go
 Be sure to use the latest version.
 
 ```sh
-git clone https://github.com/alien-chain/alien
-cd alien
-starport chain build
+git clone https://github.com/hazlorlabs/core
+cd core
+Make Build
+then
+Make Install
 ```
 
 ### Minimum hardware requirements
 
-- 2GB RAM
-- 25GB of disk space
+- 4GB RAM
+- 50GB of disk space
 - 1.4 GHz amd64 CPU
 
 
@@ -71,26 +73,26 @@ Below are the instructions to generate & submit your genesis transaction
    chain-id
 
    ```bash
-   aliend init <moniker-name> --chain-id=ufo
+   hazlord init <moniker-name> --chain-id=hazlor_7878-1
    ```
 
 2. Create a local key pair
 
    ```sh
-   > aliend keys add <key-name>
+   > hazlord keys add <key-name>
    ```
 
 3. Add your account to your local genesis file with a given amount and the key you
-   just created. Use only `100000000ualien`, other amounts will be ignored.
+   just created. Use only `100000000tscas`, other amounts will be ignored.
 
    ```bash
-   aliend add-genesis-account $(aliend keys show <key-name> -a) 100000000ualien
+   hazlord add-genesis-account $(hazlord keys show <key-name> -a) 100000000tscas
    ```
 
 4. Create the gentx
 
    ```bash
-   aliend gentx <key-name> 90000000ualien --chain-id=ufo
+   hazlord gentx <key-name> 90000000tscas --chain-id=hazlor_7878-1
    ```
 
    If all goes well, you will see a message similar to the following:
@@ -101,7 +103,7 @@ Below are the instructions to generate & submit your genesis transaction
 
 ### Submit genesis transaction
 
-- Fork [the testnets repo](https://github.com/alien-chain/testnets) into your Github account
+- Fork [the testnets repo](https://github.com/hazlorlabs/testnet) into your Github account
 
 - Clone your repo using
 
@@ -113,11 +115,11 @@ Below are the instructions to generate & submit your genesis transaction
 
   ```sh
   > cd testnets
-  > cp ~/.alien/config/gentx/gentx*.json ./ufo/gentx/
+  > cp ~/.alien/config/gentx/gentx*.json ./hazlor_7878-1/gentx/
   ```
 
 - Commit and push to your repo
-- Create a PR onto https://github.com/alien-chain/testnets
+- Create a PR onto https://github.com/hazlorlabs/testnet
 - Only PRs from individuals / groups with a history successfully running nodes will be accepted. This is to ensure the network successfully starts on time.
 
 #### Running in production
@@ -127,7 +129,7 @@ Download Genesis file when the time is right. Put it in your `/home/user/.alien`
 Create a systemd file for your Alien service:
 
 ```sh
-sudo vi /etc/systemd/system/alien.service
+sudo vi /etc/systemd/system/hazlor.service
 ```
 
 Copy and paste the following and update `<YOUR_USERNAME>`, `<GO_WORKSPACE>`, and `<CHAIN_ID>`:
@@ -138,7 +140,7 @@ After=network-online.target
 
 [Service]
 User=root
-ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/aliend start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.alien
+ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/hazlord start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.alien
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -153,27 +155,27 @@ WantedBy=multi-user.target
 Enable and start the new service:
 
 ```sh
-sudo systemctl enable aliend
-sudo systemctl start aliend
+sudo systemctl enable hazlord
+sudo systemctl start hazlord
 ```
 
 Check status:
 
 ```sh
-aliend status
+hazlord status
 ```
 
 Check logs:
 
 ```sh
-journalctl -u aliend -f
+journalctl -u hazlord -f
 ```
 
 ### Learn more
 
-- [Starport](https://github.com/tendermint/starport)
-- [Cosmos Network](https://cosmos.network)
-- [Starport Community Discord](https://discord.gg/w8rMha2C) (Amazing Tendermint Community)
+
+- [Hazlor Community Telegran](https://t.me/hazlorlabs)
+- [Hazlor Community Discord](https://discord.gg/X6ZjdB4BEJ)
 
 
 [Credit to the Juno Network for this guide](https://github.com/CosmosContracts/testnets) 
