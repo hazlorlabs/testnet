@@ -88,7 +88,7 @@ Below are the instructions to generate & submit your genesis transaction
    If all goes well, you will see a message similar to the following:
 
    ```bash
-   Genesis transaction written to "/home/user/.alien/config/gentx/gentx-******.json"
+   Genesis transaction written to "/home/user/.hazlor/config/gentx/gentx-******.json"
    ```
 
 ### Submit genesis transaction
@@ -105,7 +105,7 @@ Below are the instructions to generate & submit your genesis transaction
 
   ```sh
   > cd testnets
-  > cp ~/.alien/config/gentx/gentx*.json ./hazlor_7878-1/gentx/
+  > cp ~/.hazlor/config/gentx/gentx*.json ./hazlor_7878-1/gentx/
   ```
 
 - Commit and push to your repo
@@ -114,7 +114,7 @@ Below are the instructions to generate & submit your genesis transaction
 
 #### Running in production
 
-Download Genesis file when the time is right. Put it in your `/home/user/.alien` folder.
+Download Genesis file when the time is right. Put it in your `/home/user/.hazlor` folder.
 
 Create a systemd file for your Alien service:
 
@@ -130,7 +130,7 @@ After=network-online.target
 
 [Service]
 User=root
-ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/hazlord start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.alien
+ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/hazlord start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.hazlor
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=4096
@@ -140,7 +140,7 @@ WantedBy=multi-user.target
 ```
 
 2
-**This assumes `$HOME/go_workspace` to be your Go workspace, and `$HOME/.alien` to be your directory for config and data. Your actual directory locations may vary.**
+**This assumes `$HOME/go_workspace` to be your Go workspace, and `$HOME/.hazlor` to be your directory for config and data. Your actual directory locations may vary.**
 
 Enable and start the new service:
 
