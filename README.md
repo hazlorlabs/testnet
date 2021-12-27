@@ -6,7 +6,7 @@
 <!-- TODO: add banner -->
 ![banner](https://pbs.twimg.com/media/FHpGU6LVkAEu8fn?format=jpg&name=small)
 
-Planned Start Time: 2/01/2022, 16:00 PST;
+Planned Start Time: 2/01/2022 16:00 PST;
 
 **This testnet will not be incentivized.**
 
