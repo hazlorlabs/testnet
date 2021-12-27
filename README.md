@@ -5,7 +5,7 @@
 </div>
 
 <!-- TODO: add banner -->
-<![banner](https://pbs.twimg.com/profile_banners/1444536586931113988/1634030600/600x200) -->
+<![banner](https://pbs.twimg.com/media/FHpGU6LVkAEu8fn?format=jpg&name=small)
 
 Planned Start Time: 2/01/2022, 16:00 PST;
 
