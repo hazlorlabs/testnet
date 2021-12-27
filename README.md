@@ -1,11 +1,10 @@
-# Hazlor - Planet Hatlas Testnet 
 
 <div align="center">
   <h1> </h1>
 </div>
 
 <!-- TODO: add banner -->
-<![banner](https://pbs.twimg.com/media/FHpGU6LVkAEu8fn?format=jpg&name=small)
+![banner](https://pbs.twimg.com/media/FHpGU6LVkAEu8fn?format=jpg&name=small)
 
 Planned Start Time: 2/01/2022, 16:00 PST;
 
