@@ -8,7 +8,7 @@
 
 Planned Start Time: 2/01/2022 16:00 PST;
 
-**This testnet will not be incentivized.**
+                          **This testnet will not be Incentivized.**
 
 <div align="center">
   <a href="https://github.com/hazlorlabs/blockchain/releases/tag/v0.4.3">
