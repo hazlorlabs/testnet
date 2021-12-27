@@ -1,7 +1,7 @@
 # Hazlor - Planet Hatlas Testnet 
 
 
-Planned Start Time: 1/15/2022, 16:00 PST;
+Planned Start Time: 2/01/2022, 16:00 PST;
 
 **This testnet will not be incentivized.**
 
@@ -9,7 +9,7 @@ Planned Start Time: 1/15/2022, 16:00 PST;
 
 ### Install and build latest Binary:
 
-**Prerequisites:** If you want to install Starport locally, make sure to have [Golang >=1.16](https://golang.org/). The latest version of Starport also requires [Protocol Buffer compiler](https://grpc.io/docs/protoc-installation/) to be installed. [Node.js >=12.19.0](https://nodejs.org/) is used to build the welcome screen, block explorer and to run the web scaffold.
+**Prerequisites:** If you want to install Starport locally, make sure to have [Golang >=1.17](https://golang.org/). The latest version of Starport also requires [Protocol Buffer compiler](https://grpc.io/docs/protoc-installation/) to be installed. [Node.js >=12.19.0](https://nodejs.org/) is used to build the welcome screen, block explorer and to run the web scaffold.
 
 #### Build from source
 
@@ -39,8 +39,8 @@ export GOPATH=~/go
 Be sure to use the latest version.
 
 ```sh
-git clone https://github.com/hazlorlabs/core
-cd core
+git clone https://github.com/hazlorlabs/blockchain.git
+cd blockchain
 Make Build
 then
 Make Install
@@ -98,14 +98,14 @@ Below are the instructions to generate & submit your genesis transaction
 - Clone your repo using
 
   ```bash
-  git clone https://github.com/<your-github-username>/testnets
+  git clone https://github.com/<your-github-username>/testnet
   ```
 
-- Copy the generated gentx json file to `<repo_path>/lucina/gentx/`
+- Copy the generated gentx json file to `<repo_path>/plant_hatlas/gentx/`
 
   ```sh
-  > cd testnets
-  > cp ~/.hazlor/config/gentx/gentx*.json ./hazlor_7878-1/gentx/
+  > cd testnet
+  > cp ~/.hazlord/config/gentx/gentx*.json ./hazlor_7878-1/gentx/
   ```
 
 - Commit and push to your repo
