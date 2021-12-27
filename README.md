@@ -1,5 +1,11 @@
 # Hazlor - Planet Hatlas Testnet 
 
+<div align="center">
+  <h1> </h1>
+</div>
+
+<!-- TODO: add banner -->
+<![banner](https://pbs.twimg.com/profile_banners/1444536586931113988/1634030600/600x200) -->
 
 Planned Start Time: 2/01/2022, 16:00 PST;
 
@@ -59,11 +65,11 @@ Below are the instructions to generate & submit your genesis transaction
 
 ### Generate genesis transaction (gentx)
 
-1. Initialize the Alien directories and create the local genesis file with the correct
+1. Initialize the Hazlor directories and create the local genesis file with the correct
    chain-id
 
    ```bash
-   hazlord init <moniker-name> --chain-id=hazlor_7878-1
+   hazlord init <moniker-name> --chain-id hazlor_7878-1
    ```
 
 2. Create a local key pair
@@ -116,7 +122,7 @@ Below are the instructions to generate & submit your genesis transaction
 
 Download Genesis file when the time is right. Put it in your `/home/user/.hazlor` folder.
 
-Create a systemd file for your Alien service:
+Create a systemd file for your Hazlord service:
 
 ```sh
 sudo vi /etc/systemd/system/hazlor.service
@@ -125,16 +131,18 @@ sudo vi /etc/systemd/system/hazlor.service
 Copy and paste the following and update `<YOUR_USERNAME>`, `<GO_WORKSPACE>`, and `<CHAIN_ID>`:
 
 ```sh
-Description=Alien daemon
+Description=hazlord daemon
 After=network-online.target
-
 [Service]
-User=root
-ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/hazlord start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.hazlor
-Restart=on-failure
+User=<YOUR_USERNAME>
+ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/hazlord start --
+home=/home/<YOUR_USERNAME>/.hazlord
+WorkingDirectory=/home/<YOUR_USERNAME>/go/bin
+StandardOutput=file:/var/log/hazlord/digitaloceand.log
+StandardError=file:/var/log/hazlord/digitaloceand_error.log
+Restart=always
 RestartSec=3
 LimitNOFILE=4096
-
 [Install]
 WantedBy=multi-user.target
 ```
