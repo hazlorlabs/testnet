@@ -71,9 +71,9 @@ Be sure to use the latest version.
 ```sh
 git clone https://github.com/hazlorlabs/blockchain.git
 cd blockchain
-Make Build
+make build
 then
-Make Install
+make install
 ```
 
 ### Minimum hardware requirements
