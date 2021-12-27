@@ -10,6 +10,31 @@ Planned Start Time: 2/01/2022 16:00 PST;
 
 **This testnet will not be incentivized.**
 
+<div align="center">
+  <a href="https://github.com/hazlorlabs/blockchain/releases/tag/v0.4.3">
+    <img alt="Version" src="https://img.shields.io/github/tag/tharsis/evmos.svg" />
+  </a>
+  <a href="https://github.com/tharsis/evmos/blob/main/LICENSE">
+    <img alt="License: Apache-2.0" src="https://img.shields.io/github/license/tharsis/evmos.svg" />
+  </a>
+  <a href="https://pkg.go.dev/github.com/tharsis/evmos">
+    <img alt="GoDoc" src="https://godoc.org/github.com/tharsis/evmos?status.svg" />
+  </a>
+  <a href="https://goreportcard.com/report/github.com/tharsis/evmos">
+    <img alt="Go report card" src="https://goreportcard.com/badge/github.com/tharsis/evmos"/>
+  </a>
+</div>
+<div align="center">
+  <a href="https://discord.gg/X6ZjdB4BEJ">
+    <img alt="Discord" src="https://img.shields.io/discord/809048090249134080.svg" />
+  </a>
+  <a href="https://github.com/tharsis/evmos/actions?query=branch%3Amain+workflow%3ALint">
+    <img alt="Lint Status" src="https://github.com/tharsis/evmos/actions/workflows/lint.yml/badge.svg?branch=main" />
+  </a>
+  <a href="https://twitter.com/HazlorLabs">
+    <img alt="Twitter Follow Hazlor" src="https://img.shields.io/twitter/follow/HazlorLabs"/>
+  </a>
+</div>
 
 
 ### Install and build latest Binary:
