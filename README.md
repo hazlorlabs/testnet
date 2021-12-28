@@ -1,15 +1,45 @@
-# Hazlor - Planet Hatlas Testnet 
 
+<div align="center">
+  <h1> </h1>
+</div>
 
-Planned Start Time: 1/15/2022, 16:00 PST;
+<!-- TODO: add banner -->
+![banner](https://pbs.twimg.com/media/FHpGU6LVkAEu8fn?format=jpg&name=small)
 
-**This testnet will not be incentivized.**
+Planned Start Time: 2/01/2022 16:00 PST;
 
+                              **This testnet will not be Incentivized.**
+
+<div align="center">
+  <a href="https://github.com/hazlorlabs/blockchain/releases/tag/v0.4.3">
+    <img alt="Version" src="https://img.shields.io/github/tag/tharsis/evmos.svg" />
+  </a>
+  <a href="https://github.com/tharsis/evmos/blob/main/LICENSE">
+    <img alt="License: Apache-2.0" src="https://img.shields.io/github/license/tharsis/evmos.svg" />
+  </a>
+  <a href="https://pkg.go.dev/github.com/tharsis/evmos">
+    <img alt="GoDoc" src="https://godoc.org/github.com/tharsis/evmos?status.svg" />
+  </a>
+  <a href="https://goreportcard.com/report/github.com/tharsis/evmos">
+    <img alt="Go report card" src="https://goreportcard.com/badge/github.com/tharsis/evmos"/>
+  </a>
+</div>
+<div align="center">
+  <a href="https://discord.gg/X6ZjdB4BEJ">
+    <img alt="Discord" src="https://img.shields.io/discord/809048090249134080.svg" />
+  </a>
+  <a href="https://github.com/tharsis/evmos/actions?query=branch%3Amain+workflow%3ALint">
+    <img alt="Lint Status" src="https://github.com/tharsis/evmos/actions/workflows/lint.yml/badge.svg?branch=main" />
+  </a>
+  <a href="https://twitter.com/HazlorLabs">
+    <img alt="Twitter Follow Hazlor" src="https://img.shields.io/twitter/follow/HazlorLabs"/>
+  </a>
+</div>
 
 
 ### Install and build latest Binary:
 
-**Prerequisites:** If you want to install Starport locally, make sure to have [Golang >=1.16](https://golang.org/). The latest version of Starport also requires [Protocol Buffer compiler](https://grpc.io/docs/protoc-installation/) to be installed. [Node.js >=12.19.0](https://nodejs.org/) is used to build the welcome screen, block explorer and to run the web scaffold.
+**Prerequisites:** If you want to install Starport locally, make sure to have [Golang >=1.17](https://golang.org/). The latest version of Starport also requires [Protocol Buffer compiler](https://grpc.io/docs/protoc-installation/) to be installed. [Node.js >=12.19.0](https://nodejs.org/) is used to build the welcome screen, block explorer and to run the web scaffold.
 
 #### Build from source
 
@@ -39,11 +69,11 @@ export GOPATH=~/go
 Be sure to use the latest version.
 
 ```sh
-git clone https://github.com/hazlorlabs/core
-cd core
-Make Build
+git clone https://github.com/hazlorlabs/blockchain.git
+cd blockchain
+make build
 then
-Make Install
+make install
 ```
 
 ### Minimum hardware requirements
@@ -59,11 +89,11 @@ Below are the instructions to generate & submit your genesis transaction
 
 ### Generate genesis transaction (gentx)
 
-1. Initialize the Alien directories and create the local genesis file with the correct
+1. Initialize the Hazlor directories and create the local genesis file with the correct
    chain-id
 
    ```bash
-   hazlord init <moniker-name> --chain-id=hazlor_7878-1
+   hazlord init <moniker-name> --chain-id hazlor_7878-1
    ```
 
 2. Create a local key pair
@@ -98,14 +128,14 @@ Below are the instructions to generate & submit your genesis transaction
 - Clone your repo using
 
   ```bash
-  git clone https://github.com/<your-github-username>/testnets
+  git clone https://github.com/<your-github-username>/testnet
   ```
 
-- Copy the generated gentx json file to `<repo_path>/lucina/gentx/`
+- Copy the generated gentx json file to `<repo_path>/plant_hatlas/gentx/`
 
   ```sh
-  > cd testnets
-  > cp ~/.hazlor/config/gentx/gentx*.json ./hazlor_7878-1/gentx/
+  > cd testnet
+  > cp ~/.hazlord/config/gentx/gentx*.json ./hazlor_7878-1/gentx/
   ```
 
 - Commit and push to your repo
@@ -116,7 +146,7 @@ Below are the instructions to generate & submit your genesis transaction
 
 Download Genesis file when the time is right. Put it in your `/home/user/.hazlor` folder.
 
-Create a systemd file for your Alien service:
+Create a systemd file for your Hazlord service:
 
 ```sh
 sudo vi /etc/systemd/system/hazlor.service
@@ -125,16 +155,18 @@ sudo vi /etc/systemd/system/hazlor.service
 Copy and paste the following and update `<YOUR_USERNAME>`, `<GO_WORKSPACE>`, and `<CHAIN_ID>`:
 
 ```sh
-Description=Alien daemon
+Description=hazlord daemon
 After=network-online.target
-
 [Service]
-User=root
-ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/hazlord start --p2p.laddr tcp://0.0.0.0:26656 --home /home/<YOUR_USERNAME>/.hazlor
-Restart=on-failure
+User=<YOUR_USERNAME>
+ExecStart=/home/<YOUR_USERNAME>/<GO_WORKSPACE>/go/bin/hazlord start --
+home=/home/<YOUR_USERNAME>/.hazlord
+WorkingDirectory=/home/<YOUR_USERNAME>/go/bin
+StandardOutput=file:/var/log/hazlord/digitaloceand.log
+StandardError=file:/var/log/hazlord/digitaloceand_error.log
+Restart=always
 RestartSec=3
 LimitNOFILE=4096
-
 [Install]
 WantedBy=multi-user.target
 ```
